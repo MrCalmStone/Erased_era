@@ -113,7 +113,7 @@ plugins:
   - source: "@quartz-themes/core"
     enabled: true
     options:
-      theme: its-theme
+      theme: ttrpg-rathgar-gold
       variation: ttrpg-dnd
       mode: both
   - source: "@quartz-community/remove-draft"
@@ -277,10 +277,6 @@ plugins:
       enableInteraction: true
       darkMode: auto
       exportPadding: 20
-    order: 50
-  - source: "@quartz-themes/default"
-    enabled: true
-    options: {}
     order: 50
 layout:
   groups:
