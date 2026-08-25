@@ -6,7 +6,7 @@ configuration:
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: ru‑RU
+  locale: en-US
   baseUrl: MrCalmStone.github.io/Erased_era
   ignorePatterns:
     - private
@@ -134,7 +134,7 @@ plugins:
   - source: "@quartz-community/stacked-pages"
     enabled: false
     layout:
-      position: afterBody
+      position: header
       priority: 50
       display: all
   - source: "@quartz-community/alias-redirects"
@@ -278,6 +278,21 @@ plugins:
       darkMode: auto
       exportPadding: 20
     order: 50
+  - source: github:quartz-community/stacked-pages
+    enabled: false
+    options:
+      maxTabs: 8
+      mobileBreakpoint: 800
+      showSpines: true
+      animateTransitions: true
+    order: 50
+    layout:
+      position: afterBody
+      priority: 50
+  - source: github:quartz-community/unlisted-pages
+    enabled: true
+    options: {}
+    order: 45
 layout:
   groups:
     toolbar:
