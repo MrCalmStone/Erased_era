@@ -1,3 +1,103 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+@use "./variables.scss" as *;
+
+/* ============================================================
+   Переопределение цветов и шрифтов в стиле D&D Beyond
+   (размеры и формы НЕ меняются, элементы управления НЕ трогаем)
+   ============================================================ */
+
+/* --- Светлая тема (по умолчанию) --- */
+:root:root {
+  // Основные цвета – светлый пергамент, тёмный текст
+  --rg-ground: #f4f2ed;
+  --rg-surface: #e8e5de;
+  --rg-surface-alt: #dbd7ce;
+  --rg-text: #1a1e22;
+  --rg-text-muted: #5a5f66;
+
+  // Акценты – яркий красный (фирменный цвет D&D Beyond)
+  --rg-accent-gold: #c4101a;
+  --rg-accent-gold-bright: #e40712;
+
+  // Дополнительные цвета для ссылок (синий)
+  --color-dnd-blue: #0066cc;
+
+  // Шрифты
+  --rg-font-body: "Roboto", "Inter", -apple-system, sans-serif;
+  --rg-font-display: "Spectral", "Georgia", serif;
+  --rg-font-mono: "Fira Code", monospace;
+}
+
+/* --- Тёмная тема (Underdark Mode) --- */
+:root:root[saved-theme="dark"] {
+  --rg-ground: #12181c;
+  --rg-surface: #1c2329;
+  --rg-surface-alt: #262f36;
+  --rg-text: #e8e6e3;
+  --rg-text-muted: #9aa0a6;
+
+  --rg-accent-gold: #e40712;
+  --rg-accent-gold-bright: #ff3333;
+
+  --color-dnd-blue: #4d94ff;
+}
+
+/* ============================================================
+   Дополнительные стили (только цвета и шрифты)
+   ============================================================ */
+
+body {
+  font-family: var(--rg-font-body);
+  color: var(--rg-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--rg-font-display);
+  color: var(--rg-text);
+}
+
+/* Ссылки */
+a,
+.internal-link,
+.external-link {
+  color: var(--rg-accent-gold-bright);
+  text-decoration: none;
+}
+a:hover,
+.internal-link:hover,
+.external-link:hover {
+  color: var(--color-dnd-blue);
+  text-decoration: underline;
+}
+
+/* Таблицы */
+table th {
+  background-color: var(--rg-surface-alt);
+  color: var(--rg-text);
+  border-bottom-color: var(--rg-accent-gold);
+}
+table td {
+  border-bottom-color: var(--rg-surface-alt);
+}
+
+/* Блоки цитирования */
+blockquote {
+  border-left-color: var(--rg-accent-gold);
+  background-color: var(--rg-surface);
+  color: var(--rg-text-muted);
+}
+
+/* Боковые панели (навигационные контейнеры) – только фон и границы */
+.sidebar {
+  background-color: var(--rg-surface);
+  border-color: var(--rg-surface-alt);
+}
+
+/* Горизонтальная линия */
+hr {
+  background: linear-gradient(to right, transparent, var(--rg-accent-gold), transparent);
+  border: 0;
+  height: 1px;
+}
